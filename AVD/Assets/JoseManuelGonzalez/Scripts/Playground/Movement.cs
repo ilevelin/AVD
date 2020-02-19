@@ -7,7 +7,9 @@ public class Movement : MonoBehaviour
     public Player player;
     public float runSpeed=0f, horizontalMove=0f;
     public bool jump=false, crouch=false;
-
+    [SerializeField] private Animator animator;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+ 
     void Update()
     {
         horizontalMove = Input.GetAxis("Horizontal") * runSpeed;
@@ -19,7 +21,16 @@ public class Movement : MonoBehaviour
 
         Debug.Log("jump = " + jump + "// crouch = " + crouch);
 
-       // player.Move(horizontalMove * Time.deltaTime, crouch, jump);
+        // player.Move(horizontalMove * Time.deltaTime, crouch, jump);
+
+        if(horizontalMove != 0)
+        {
+            spriteRenderer.flipX = horizontalMove < 0;
+        }
+
+        animator.SetBool("Crouching", crouch);
+        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+        //animator.SetBool("Grounded", player.m_Grounded);
 
     }
     void FixedUpdate()
