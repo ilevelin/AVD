@@ -21,16 +21,11 @@ public class Movement : MonoBehaviour
 
         Debug.Log("jump = " + jump + "// crouch = " + crouch);
 
-        // player.Move(horizontalMove * Time.deltaTime, crouch, jump);
-
-        if(horizontalMove != 0)
-        {
-            spriteRenderer.flipX = horizontalMove < 0;
-        }
+        spriteRenderer.flipX = horizontalMove < 0;
 
         animator.SetBool("Crouching", crouch);
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
-        //animator.SetBool("Grounded", player.m_Grounded);
+        animator.SetBool("Grounded", player.m_Grounded);
 
     }
     void FixedUpdate()

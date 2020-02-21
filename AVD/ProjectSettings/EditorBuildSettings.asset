@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ADV/MAIN2019V.unity
     guid: 1ffa77a7b7c2e9b4b8979f9525b129a1
+  - enabled: 1
+    path: Assets/JoseManuelGonzalez/Scenes/Intro.unity
+    guid: bad11477eed594945a10f186f5132246
+  - enabled: 1
+    path: Assets/JoseManuelGonzalez/Scenes/MainScene.unity
+    guid: 8a47bbeb5954734449d7b4aa4c53f561
+  - enabled: 1
+    path: Assets/JoseManuelGonzalez/Scenes/Playground.unity
+    guid: 0032179594872f7438de31c65d9cc385
   m_configObjects: {}
