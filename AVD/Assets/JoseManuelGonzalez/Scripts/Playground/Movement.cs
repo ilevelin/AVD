@@ -7,29 +7,35 @@ public class Movement : MonoBehaviour
     public Player player;
     public float runSpeed=0f, horizontalMove=0f;
     public bool jump=false, crouch=false;
+    private bool flip = false;
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer spriteRenderer;
  
     void Update()
     {
+
+    }
+    void FixedUpdate()
+    {
         horizontalMove = Input.GetAxis("Horizontal") * runSpeed;
 
         jump = Input.GetButtonDown("Jump");
 
-        if (Input.GetButtonDown("Crouch")) crouch = true;
-        if (Input.GetButtonUp("Crouch")) crouch = false;
+        crouch = Input.GetButton("Crouch");
+        //if (Input.GetButtonDown("Crouch")) crouch = true;
+        //if (Input.GetButtonUp("Crouch")) crouch = false;
 
-        Debug.Log("jump = " + jump + "// crouch = " + crouch);
-
-        spriteRenderer.flipX = horizontalMove < 0;
+        /*if (horizontalMove < -0.1 && !flip) { 
+            flip = true;
+        }
+        if (horizontalMove > 0.1 && flip ) {
+            flip = false;
+        }*/
 
         animator.SetBool("Crouching", crouch);
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
         animator.SetBool("Grounded", player.m_Grounded);
 
-    }
-    void FixedUpdate()
-    {
         player.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
         jump = false;
     }
