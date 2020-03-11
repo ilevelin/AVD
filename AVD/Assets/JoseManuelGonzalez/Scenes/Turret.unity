@@ -365,7 +365,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 897101541}
   m_LocalRotation: {x: -0, y: -0.9918828, z: 0.12715591, w: 0}
-  m_LocalPosition: {x: 0.199, y: 0.995, z: 1.644}
+  m_LocalPosition: {x: -0.011, y: 0.999, z: 1.943}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7575,7 +7575,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8296172668745144956}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.04924786, y: 0.311, z: -0.30057076}
+  m_LocalPosition: {x: 0, y: 0.311, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 892378928376858188}
@@ -12151,6 +12151,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c77195a7eab81b8448dc645a94566fc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 2032735365314325130, guid: 01f59cbe17110a74c9ce1efdf580d4e4, type: 3}
+  limitedTime: 0
+  timeAlive: 5
+  turretAnimator: {fileID: 1037337463}
+  gunsAnimator:
+  - {fileID: 1239767518}
+  - {fileID: 945681977}
+  - {fileID: 870075515}
+  - {fileID: 2091693654}
+  gunsPosition:
+  - {fileID: 1239767517}
+  - {fileID: 945681976}
+  - {fileID: 870075514}
+  - {fileID: 2091693653}
+  shootFrequency: 0.1
 --- !u!23 &8307869675401886207
 MeshRenderer:
   m_ObjectHideFlags: 0
