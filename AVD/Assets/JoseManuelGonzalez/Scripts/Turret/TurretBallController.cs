@@ -6,16 +6,6 @@ public class TurretBallController : MonoBehaviour
 {
     public LayerMask mask;
     public GameObject turret;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnCollisionEnter(Collision collision) {
 

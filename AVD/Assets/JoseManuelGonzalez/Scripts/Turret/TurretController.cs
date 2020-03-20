@@ -5,14 +5,6 @@ using UnityEngine;
 
 public class TurretController : MonoBehaviour
 {
-
-    /*
-      scripts resueltos:
-         https://github.com/amunyoz/AVD/blob/Turret/AVD/Assets/TriggerInputP.cs
-         https://github.com/amunyoz/AVD/blob/Turret/AVD/Assets/TurretActivator.cs
-         https://github.com/amunyoz/AVD/blob/Turret/AVD/Assets/FireBullets3d.cs
-     */
-
     public GameObject bullet;
     public bool limitedTime;
     [Min(0)] public float timeAlive;
@@ -26,11 +18,23 @@ public class TurretController : MonoBehaviour
     {
         if(limitedTime) StartCoroutine(LimitedTime());
     }
-
     private void FixedUpdate()
     {
         if (Input.GetKey(KeyCode.Space) && k) StartCoroutine(Fire());
         if (Input.GetKey(KeyCode.O)) {StopAllCoroutines(); StartCoroutine(Die());}
+    }
+    private int i = 0;
+    private bool k = true;
+    IEnumerator Fire()
+    {
+        k = false;
+        gunsAnimator[i].SetTrigger("Shoot");
+        GameObject clone = Instantiate(bullet, gunsPosition[i].position, gunsPosition[i].rotation);
+        clone.GetComponent<Rigidbody>().AddRelativeForce(0.0f, 5f, bulletSpeed);
+
+        i = ++i % gunsPosition.Length;
+        yield return new WaitForSeconds(shootFrequency);
+        k = true;
     }
 
     IEnumerator LimitedTime()
@@ -53,20 +57,5 @@ public class TurretController : MonoBehaviour
     private void OnDisable()
     {
         StopAllCoroutines();
-    }
-
-    private int i = 0;
-    private bool k = true;
-    GameObject clone;
-    IEnumerator Fire()
-    {
-        k = false;
-        gunsAnimator[i].SetTrigger("Shoot");
-        clone = Instantiate(bullet, gunsPosition[i].position, gunsPosition[i].rotation);
-        clone.GetComponent<Rigidbody>().AddRelativeForce(0.0f, 5f, bulletSpeed);
-
-        i = ++i % gunsPosition.Length;
-        yield return new WaitForSeconds(shootFrequency);
-        k = true;
     }
 }
