@@ -14,6 +14,7 @@ public class Move : MonoBehaviour
     private Animator animator;
     private RaycastHit hitInfo;
     public GameObject objective;
+    public GameObject pointAndClickObjective;
     public MoveType movementType;
 
     void Start()
@@ -34,6 +35,7 @@ public class Move : MonoBehaviour
                     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                     if (Physics.Raycast(ray.origin, ray.direction, out hitInfo))
                         agent.destination = hitInfo.point;
+                        pointAndClickObjective.transform.position = new Vector3(hitInfo.point.x, hitInfo.point.y + 0.01f, hitInfo.point.z);
                 }
                 break;
 
