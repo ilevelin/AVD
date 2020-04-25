@@ -22,7 +22,7 @@ namespace CreatorKitCodeInternal {
         Vector3 m_StartingAnchor;
         Animator m_Animator;
         NavMeshAgent m_Agent;
-        CharacterData m_CharacterData;
+        public CharacterData m_CharacterData;
 
         CharacterAudio m_CharacterAudio;
 

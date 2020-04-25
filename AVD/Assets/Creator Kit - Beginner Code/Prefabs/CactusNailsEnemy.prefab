@@ -30,7 +30,7 @@ GameObject:
   - component: {fileID: 1514832715870360197}
   m_Layer: 11
   m_Name: CactusNailsEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,6 +102,7 @@ MonoBehaviour:
   SpottedAudioClip:
   - {fileID: 8300000, guid: e2e202507d818874caf180e900781122, type: 3}
   - {fileID: 8300000, guid: 1acdcee1a67e6a74c92d232b77c1ec91, type: 3}
+  m_CharacterData: {fileID: 0}
 --- !u!114 &5667712714323555573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,16 +167,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5667712714323555575}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: d3aea247b6976ac4298d5d2e8c0a681b,
+    - target: {fileID: -6057140222963153312, guid: d3aea247b6976ac4298d5d2e8c0a681b,
         type: 3}
-      propertyPath: m_Name
-      value: CactusNails
-      objectReference: {fileID: 0}
-    - target: {fileID: 6322602971804420348, guid: d3aea247b6976ac4298d5d2e8c0a681b,
-        type: 3}
-      propertyPath: m_Name
-      value: CactusNailsMesh
-      objectReference: {fileID: 0}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d7aabf5e33eb7434b807049163b2ea0b, type: 2}
     - target: {fileID: -4216859302048453862, guid: d3aea247b6976ac4298d5d2e8c0a681b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -231,11 +227,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: d3aea247b6976ac4298d5d2e8c0a681b,
+    - target: {fileID: -927199367670048503, guid: d3aea247b6976ac4298d5d2e8c0a681b,
         type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: d7aabf5e33eb7434b807049163b2ea0b, type: 2}
+      propertyPath: m_Name
+      value: CactusNails
+      objectReference: {fileID: 0}
     - target: {fileID: 1651863904801215526, guid: d3aea247b6976ac4298d5d2e8c0a681b,
         type: 3}
       propertyPath: m_Materials.Array.size
@@ -246,6 +242,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 9ad4c3bb7eb7de94b8bf8199a2e3f133, type: 2}
+    - target: {fileID: 6322602971804420348, guid: d3aea247b6976ac4298d5d2e8c0a681b,
+        type: 3}
+      propertyPath: m_Name
+      value: CactusNailsMesh
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3aea247b6976ac4298d5d2e8c0a681b, type: 3}
 --- !u!1 &4433283356119020830 stripped
